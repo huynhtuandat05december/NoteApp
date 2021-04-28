@@ -60,6 +60,7 @@ function CreateNote(props) {
     return (
         <Formik
             initialValues={initialValues}
+            enableReinitialize
             onSubmit={values => createNote ? submitCreateNote(values) : submitEditNote(values)}
         >
             {

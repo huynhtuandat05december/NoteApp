@@ -33,21 +33,21 @@ function InputContent(props) {
     const classes = useStyles();
     const { field, label, placeholder } = props;
     const { name, value, onChange, onBlur } = field;
-    // console.log(value);
+    console.log(value);
     return (
         <TextField
             id="outlined-multiline-static"
             label={label}
             multiline
             fullWidth
+            autoFocus
             placeholder={placeholder}
             className={classes.titleStyle}
             variant="outlined"
             rows={20}
             onChange={onChange}
             onBlur={onBlur}
-            defaultValue={value}
-            // value={value}
+            value={value}
             name={name}
         />
     );
