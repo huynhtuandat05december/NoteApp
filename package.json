@@ -4,13 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "server": "nodemon server.js",
+    "client": "cd client && npm run start",
+    "client-install": "cd client && npm install",
+    "server-install": "npm install",
+    "install-all": "concurrently \"npm run client-install\" \"npm run server-install\" ",
+    "dev": "concurrently \"npm run client\" \"npm run server\" ",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "concurrently": "^6.0.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
